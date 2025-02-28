@@ -1,0 +1,115 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.calculadora {
+  background: rgba(48, 47, 47, 0.95);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(104, 14, 207, 0.95);
+  text-align: center;
+  width: 300px;
+}
+
+.tela {
+  background: black;
+  color: cyan;
+  font-size: 2em;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid cyan;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.numero-animado {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  background: black;
+  color: cyan;
+  border: 2px solid cyan;
+  padding: 15px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transforme 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px cyan;
+}
+
+.btn:active::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: onda 0.3s linear;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+@keyframes onda {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.operador {
+  color: white;
+}
+
+.igual {
+  background: cyan;
+  color: black;
+  grid-column: span 2;
+}
